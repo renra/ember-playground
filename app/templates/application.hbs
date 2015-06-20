@@ -1,3 +1,33 @@
-<h2 id="title">Welcome to Ember.js</h2>
+<h2 id="title">Welcome to Ember Playground</h2>
 
 {{outlet}}
+
+<div>
+{{#link-to 'photos'}}Click here and you will be ... redirected{{/link-to}}
+</div>
+
+<div>
+  The days of the week are:
+  <ul>
+    {{#each days as |day|}}
+      <li><button {{action 'day-clicked' day}}>{{day}}</button></li>
+    {{else}}
+      <li>Sorry, I forgot</li>
+    {{/each}}
+  </ul>
+</div>
+
+{{#if goodMood}}
+  <div>I am in a good mood today</div>
+{{else if reason}}
+  <div>What a terrible day. {{reason}}</div>
+{{else}}
+  <div>I'm just feeling shitty. Gimme a minute or two.</div>
+{{/if}}
+
+<div>{{message}}</div>
+<div>Controller message: {{controller.message}}</div>
+<div>View message: {{view.message}}</div>
+
+{{log view}}
+{{log controller}}

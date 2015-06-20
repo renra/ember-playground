@@ -14,5 +14,6 @@ App = Ember.Application.extend({
 });
 
 loadInitializers(App, config.modulePrefix);
+//Ember.Logger('In the app');
 
 export default App;
